@@ -5306,3 +5306,26 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0; }
+
+/* things I add */
+.headshotcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headshot {
+  flex: 1;
+  text-align: center;
+}
+
+.headshot img {
+  width: 100%;
+  height: auto;
+}
+
+.headshot .caption {
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+}
+
