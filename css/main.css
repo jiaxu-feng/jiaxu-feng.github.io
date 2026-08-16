@@ -1,3 +1,96 @@
+/* Mobile-specific tweaks to improve header and button layout */
+@media screen and (max-width: 767px) {
+  /* Reduce header height so content doesn't overflow on small screens */
+  .page-header.page-header-small {
+    height: 45vh;
+    max-height: 520px;
+  }
+
+  /* Move the centered content slightly higher and reduce padding */
+  .page-header .container > .content-center {
+    top: 42% !important;
+    transform: translate(-50%, -42%) !important;
+    padding: 0 10px !important;
+    max-width: 92% !important;
+  }
+
+  /* Scale down the big name/role text (override inline styles if present) */
+  .page-header .content-center .category,
+  .page-header .content-center .category span {
+    font-size: 1.05rem !important;
+    line-height: 1.2 !important;
+    text-transform: none !important;
+    display: block !important;
+    padding-left: 0 !important;
+  }
+
+  /* Pronoun smaller */
+  .page-header .content-center .category span + span {
+    font-size: 0.85rem !important;
+    margin-top: 4px;
+    font-weight: 400 !important;
+  }
+
+  /* Stack header action buttons and make them full-width for easy tapping */
+  .page-header .content-center .btn {
+    display: block !important;
+    width: calc(100% - 40px) !important;
+    margin: 10px auto !important;
+  }
+
+  /* Reduce card body side paddings to avoid horizontal overflow */
+  .card .card-body {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Additional overrides: keep the name larger than the position text and make header buttons 2x2 on phones */
+@media screen and (max-width: 767px) {
+  /* Make the first category (name + pronoun container) larger than the second (position) */
+  .page-header .container > .content-center > p.category:first-of-type,
+  .page-header .container > .content-center > p.category:first-of-type span:first-child {
+    font-size: 1.8rem !important;
+    line-height: 1.05 !important;
+    font-weight: 700 !important;
+    padding-left: 0 !important;
+    display: block !important;
+  }
+
+  /* Keep the role/position text smaller than the name */
+  .page-header .container > .content-center > p.category:nth-of-type(2) {
+    font-size: 1.05rem !important;
+    line-height: 1.2 !important;
+    margin-top: 6px !important;
+  }
+
+  /* Arrange header action buttons in a 2x2 grid for easy tapping */
+  .page-header .content-center .btn {
+    display: inline-block !important;
+    width: calc(50% - 20px) !important;
+    margin: 8px 10px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  /* Stronger: use the new wrapper to force a 2x2 flex grid */
+  .header-buttons {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-buttons > .btn {
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+    margin: 8px 10px !important;
+  }
+}
 /*!
 
  =========================================================
